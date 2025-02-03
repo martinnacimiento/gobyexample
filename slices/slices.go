@@ -51,6 +51,8 @@ func main() {
 	slice1 := notes[1:3] // slice up to but excluding the last index, i.e. [1, 3)
 	fmt.Println("slice1:", slice1)
 
+	fmt.Println("equal: ", slices.Equal(slice1, []int{2, 3}))
+
 	slice2 := []string{"a", "b", "c", "d"}
 	fmt.Println("slice2:", slice2)
 
@@ -70,4 +72,9 @@ func main() {
 		}
 	}
 	fmt.Println("twoD:", twoD)
+
+	newNotes := make([]int, 3, 6)
+	newNotes[2] = 1
+	fmt.Println("newNotes:", newNotes, "len:", len(newNotes), "cap:", cap(newNotes))
+	fmt.Println(newNotes[:5])
 }
